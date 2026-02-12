@@ -1,0 +1,305 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>cn.aegiron</groupId>
+    <artifactId>aegiron-sass-platform</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>aegiron-sass-platform</name>
+    <description>Aegiron SaaS Platform - Spring Cloud微服务架</description>
+
+    <properties>
+        <java.version>17</java.version>
+        <project.encoding>UTF-8</project.encoding>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <project.version>0.0.1-SNAPSHOT</project.version>
+
+        <!-- Maven 插件版本 -->
+        <maven.compiler.release>17</maven.compiler.release>
+        <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
+        <maven-surefire-plugin.version>3.2.5</maven-surefire-plugin.version>
+        <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
+
+        <!-- 核心依赖 -->
+        <!-- Spring Boot 版本 -->
+        <spring-boot.version>3.3.5</spring-boot.version>
+        <!-- Spring Cloud 版本 -->
+        <spring-cloud.version>2023.0.1</spring-cloud.version>
+        <!-- Spring Cloud Alibaba 版本 -->
+        <spring-cloud-alibaba.version>2022.0.0.0</spring-cloud-alibaba.version>
+
+        <!-- 次要依赖 -->
+        <!-- Lombok 版本 -->
+        <lombok.version>1.18.32</lombok.version>
+        <!-- MyBatis Plus 版本 -->
+        <mybatis-plus.version>3.5.7</mybatis-plus.version>
+        <!-- MySQL 驱动版本 -->
+        <mysql.version>8.3.0</mysql.version>
+        <!-- Druid 数据库连接池版本 -->
+        <druid.version>1.2.23</druid.version>
+        <!-- Hutool 工具类版-->
+        <hutool.version>5.8.32</hutool.version>
+        <!-- Knife4j 相关版本 -->
+        <knife4j.version>4.4.0</knife4j.version>
+        <knife4j-openapi3.version>4.4.0</knife4j-openapi3.version>
+        <swagger.core.version>2.2.0</swagger.core.version>
+        <openapi-webflux-ui.version>2.0.2</openapi-webflux-ui.version>
+        <!-- MinIO 存储版本 -->
+        <minio.version>8.2.2</minio.version>
+        <!-- Fastjson 版本 -->
+        <fastjson.version>1.2.83</fastjson.version>
+        <!-- Fastjson 2.0 版本 -->
+        <fastjson2.version>2.0.51</fastjson2.version>
+        <!-- JJWT 版本 -->
+        <jjwt.version>0.11.5</jjwt.version>
+        <!-- EasyExcel 读取Excel版本 -->
+        <easyexcel.version>3.3.2</easyexcel.version>
+        <!-- Servlet API 4.0.1 兼容版本 -->
+        <servlet-api.version>4.0.1</servlet-api.version>
+        <!-- Common Compress 压缩包版-->
+        <commons-compress.version>1.21</commons-compress.version>
+
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <!-- 核心依赖 -->
+            <!--spring cloud-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!--spring boot-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!--spring cloud alibaba-->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- 次要依赖 -->
+            <!-- hutool -->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+
+            <!-- mybatis-plus -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+
+            <!-- mysql -->
+            <dependency>
+                <groupId>com.mysql</groupId>
+                <artifactId>mysql-connector-j</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+
+            <!-- Druid -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-3-starter</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+
+            <!-- knife4j -->
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
+                <version>${knife4j.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.projectlombok</groupId>
+                        <artifactId>lombok</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <!-- knife4j-gateway -->
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-gateway-spring-boot-starter</artifactId>
+                <version>${knife4j.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.projectlombok</groupId>
+                        <artifactId>lombok</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <!-- knife4j-openapi3-ui -->
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-openapi3-ui</artifactId>
+                <version>${knife4j-openapi3.version}</version>
+            </dependency>
+
+            <!-- openapi-webflux-ui -->
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-starter-webflux-ui</artifactId>
+                <version>${openapi-webflux-ui.version}</version>
+            </dependency>
+
+            <!-- swagger -->
+            <dependency>
+                <groupId>io.swagger.core.v3</groupId>
+                <artifactId>swagger-annotations</artifactId>
+                <version>${swagger.core.version}</version>
+            </dependency>
+
+            <!-- minio -->
+            <dependency>
+                <groupId>io.minio</groupId>
+                <artifactId>minio</artifactId>
+                <version>${minio.version}</version>
+            </dependency>
+
+            <!-- fastjson -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+
+            <!-- fastjson2 -->
+            <dependency>
+                <groupId>com.alibaba.fastjson2</groupId>
+                <artifactId>fastjson2</artifactId>
+                <version>${fastjson2.version}</version>
+            </dependency>
+
+            <!-- servlet-api -->
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>${servlet-api.version}</version>
+            </dependency>
+
+            <!-- EasyExcel -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>easyexcel</artifactId>
+                <version>${easyexcel.version}</version>
+            </dependency>
+
+            <!-- Apache Commons Compress -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-compress</artifactId>
+                <version>${commons-compress.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <finalName>${project.name}</finalName>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring-boot.version}</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>repackage</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${project.encoding}</encoding>
+                    <parameters>true</parameters>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>${maven-resources-plugin.version}</version>
+                <configuration>
+                    <encoding>${project.encoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>local</id>
+            <properties>
+                <java.version>${java.version}</java.version>
+                <profile.active>local</profile.active>
+                <nacos.namespace>994c6187-0f62-4551-b50f-8cc334229c52</nacos.namespace>
+            </properties>
+
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+
+        <profile>
+            <id>dev</id>
+            <properties>
+                <java.version>${java.version}</java.version>
+                <profile.active>dev</profile.active>
+                <nacos.namespace>52799359-73e9-4ddf-aae6-0a6be50e7555</nacos.namespace>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>prod</id>
+            <properties>
+                <java.version>${java.version}</java.version>
+                <profile.active>prod</profile.active>
+                <nacos.namespace>eaea10f7-9e64-477a-97e1-f5c24e299a9e</nacos.namespace>
+            </properties>
+        </profile>
+    </profiles>
+
+</project>

@@ -8,6 +8,9 @@
     <packaging>pom</packaging>
     <name>aegiron-sass-platform</name>
     <description>Aegiron SaaS Platform - Spring Cloud微服务架</description>
+    <modules>
+        <module>aegiron-gateway</module>
+    </modules>
 
     <properties>
         <java.version>17</java.version>
@@ -275,7 +278,7 @@
             <properties>
                 <java.version>${java.version}</java.version>
                 <profile.active>local</profile.active>
-                <nacos.namespace>994c6187-0f62-4551-b50f-8cc334229c52</nacos.namespace>
+                <nacos.namespace>c17229f3-10ae-4c7c-bb57-934a464bab3a</nacos.namespace>
             </properties>
 
             <activation>
@@ -288,7 +291,7 @@
             <properties>
                 <java.version>${java.version}</java.version>
                 <profile.active>dev</profile.active>
-                <nacos.namespace>52799359-73e9-4ddf-aae6-0a6be50e7555</nacos.namespace>
+                <nacos.namespace>3ccc2cc8-53f0-4b22-aaf9-3002a557b2f9</nacos.namespace>
             </properties>
         </profile>
 
@@ -297,7 +300,7 @@
             <properties>
                 <java.version>${java.version}</java.version>
                 <profile.active>prod</profile.active>
-                <nacos.namespace>eaea10f7-9e64-477a-97e1-f5c24e299a9e</nacos.namespace>
+                <nacos.namespace>7c60fc2d-e8dd-4b48-b616-3cce030c9c5f</nacos.namespace>
             </properties>
         </profile>
     </profiles>

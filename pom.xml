@@ -10,6 +10,7 @@
     <description>Aegiron SaaS Platform - Spring Cloud微服务架</description>
     <modules>
         <module>aegiron-gateway</module>
+        <module>aegiron-system</module>
     </modules>
 
     <properties>

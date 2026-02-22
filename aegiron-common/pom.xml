@@ -13,6 +13,7 @@
     <description>通用工具类</description>
     <modules>
         <module>aegiron-common-core</module>
+        <module>aegiron-common-database</module>
     </modules>
 
 </project>

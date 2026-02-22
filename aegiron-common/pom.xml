@@ -14,6 +14,7 @@
     <modules>
         <module>aegiron-common-core</module>
         <module>aegiron-common-database</module>
+        <module>aegiron-common-excel</module>
     </modules>
 
 </project>

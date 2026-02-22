@@ -11,6 +11,7 @@
     <modules>
         <module>aegiron-gateway</module>
         <module>aegiron-system</module>
+        <module>aegiron-auth</module>
     </modules>
 
     <properties>

@@ -46,6 +46,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-test</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>cn.aegiron</groupId>
+            <artifactId>aegiron-common-core</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

@@ -1,0 +1,24 @@
+${AnsiColor.BRIGHT_CYAN}
+  ___                _
+ / _ \              (_)
+/ /_\ \  ___   __ _  _  _ __  ___   _ __
+|  _  | / _ \ / _` || || '__|/ _ \ | '_ \
+| | | ||  __/| (_| || || |  | (_) || | | |
+\_| |_/ \___| \__, ||_||_|   \___/ |_| |_|
+               __/ |
+              |___/
+
+${AnsiColor.BRIGHT_BLUE}
+===========  A E G I R O N   C L O U D   ===========
+
+${AnsiColor.BRIGHT_GREEN}
+ ENV      :: ${spring.profiles.active:default}
+ PORT     :: ${server.port:8888}
+ BOOT     :: ${spring-boot.version}
+
+${AnsiColor.BRIGHT_YELLOW}
+ Jakarta EE | Cloud Native | Microservices
+
+${AnsiColor.BRIGHT_WHITE}
+---------------------------------------------------
+${AnsiColor.DEFAULT}

@@ -1,0 +1,22 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>cn.aegiron</groupId>
+        <artifactId>aegiron-sass-platform</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>aegiron-common</artifactId>
+    <packaging>pom</packaging>
+    <name>aegiron-common</name>
+    <description>通用工具类</description>
+    <modules>
+        <module>aegiron-common-core</module>
+        <module>aegiron-common-database</module>
+        <module>aegiron-common-excel</module>
+        <module>aegiron-common-redis</module>
+        <module>aegiron-common-security</module>
+    </modules>
+
+</project>

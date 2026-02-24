@@ -231,6 +231,56 @@
                 <version>${commons-compress.version}</version>
             </dependency>
 
+            <!-- JJWT -->
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-api</artifactId>
+                <version>${jjwt.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-impl</artifactId>
+                <version>${jjwt.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-jackson</artifactId>
+                <version>${jjwt.version}</version>
+            </dependency>
+
+            <!-- 项目内部模块版本管理 -->
+            <dependency>
+                <groupId>cn.aegiron</groupId>
+                <artifactId>aegiron-common-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.aegiron</groupId>
+                <artifactId>aegiron-common-security</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.aegiron</groupId>
+                <artifactId>aegiron-common-redis</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.aegiron</groupId>
+                <artifactId>aegiron-common-database</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.aegiron</groupId>
+                <artifactId>aegiron-common-excel</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 

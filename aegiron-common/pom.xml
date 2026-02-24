@@ -16,6 +16,7 @@
         <module>aegiron-common-database</module>
         <module>aegiron-common-excel</module>
         <module>aegiron-common-redis</module>
+        <module>aegiron-common-security</module>
     </modules>
 
 </project>

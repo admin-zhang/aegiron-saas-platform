@@ -39,10 +39,17 @@ public class CommonResult<T> {
      * @param message 提示信息
      * @param data 返回数据
      */
-    private CommonResult(String code, String message, T data) {
+    public CommonResult(String code, String message, T data) {
         this.code = code;
         this.message = message;
         this.data = data;
+    }
+
+    /**
+     * 构建指定 code、message、data 的结果（用于 RetOps 等链式操作）
+     */
+    public static <T> CommonResult<T> of(String code, String message, T data) {
+        return new CommonResult<>(code, message, data);
     }
 
     /**

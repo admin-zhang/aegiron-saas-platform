@@ -47,14 +47,23 @@ public class MyBatisPlusConfig {
         return new MetaObjectHandler() {
             @Override
             public void insertFill(MetaObject metaObject) {
+                this.strictInsertFill(metaObject, "createBy", String.class, getCurrentUser());
                 this.strictInsertFill(metaObject, "createTime", LocalDateTime.class, LocalDateTime.now());
+                this.strictInsertFill(metaObject, "updateBy", String.class, getCurrentUser());
                 this.strictInsertFill(metaObject, "updateTime", LocalDateTime.class, LocalDateTime.now());
             }
 
             @Override
             public void updateFill(MetaObject metaObject) {
-                // 可以在这里处理更新时的填充逻辑
-                this.strictInsertFill(metaObject, "updateTime", LocalDateTime.class, LocalDateTime.now());
+                this.strictUpdateFill(metaObject, "updateBy", String.class, getCurrentUser());
+                this.strictUpdateFill(metaObject, "updateTime", LocalDateTime.class, LocalDateTime.now());
+            }
+
+            /**
+             * 获取当前操作用户（可从 SecurityContext 获取，此处返回 null 由业务层注入）
+             */
+            private String getCurrentUser() {
+                return null;
             }
         };
     }

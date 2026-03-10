@@ -1,6 +1,6 @@
 package cn.aegiron.security.jwt.impl;
 
-import cn.aegiron.security.config.JwtProperties;
+import cn.aegiron.security.jwt.JwtProperties;
 import cn.aegiron.security.jwt.JwtTokenService;
 import cn.aegiron.security.jwt.JwtUserInfo;
 import cn.aegiron.security.jwt.TokenBlacklistService;

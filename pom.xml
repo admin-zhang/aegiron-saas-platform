@@ -210,11 +210,11 @@
                 <version>${fastjson2.version}</version>
             </dependency>
 
-            <!-- servlet-api -->
+            <!-- servlet-api (Spring Boot 3 使用 Jakarta) -->
             <dependency>
-                <groupId>javax.servlet</groupId>
-                <artifactId>javax.servlet-api</artifactId>
-                <version>${servlet-api.version}</version>
+                <groupId>jakarta.servlet</groupId>
+                <artifactId>jakarta.servlet-api</artifactId>
+                <version>6.0.0</version>
             </dependency>
 
             <!-- EasyExcel -->
@@ -278,6 +278,12 @@
             <dependency>
                 <groupId>cn.aegiron</groupId>
                 <artifactId>aegiron-common-excel</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.aegiron</groupId>
+                <artifactId>aegiron-common-seata</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
